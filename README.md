@@ -3,75 +3,19 @@
 Formula for BMI
 Metric Units:
 
-𝐵
-𝑀
-𝐼
-=
-Weight (kg)
-Height (m)
-2
-BMI= 
-Height (m) 
-2
- 
-Weight (kg)
-​
- 
+𝐵𝑀𝐼= Weight (kg)/Height (m)^2
+
 Example: If a person weighs 70 kg and is 1.75 m tall:
-
-𝐵
-𝑀
-𝐼
-=
-70
-1.7
-5
-2
-=
-22.86
-BMI= 
-1.75 
-2
- 
-70
+𝐵𝑀𝐼=Weight (lbs)×703/Height (inches)*
 ​
- =22.86
-Imperial Units:
-
-𝐵
-𝑀
-𝐼
-=
-Weight (lbs)
-×
-703
-Height (inches)
-2
-BMI= 
-Height (inches) 
-2
- 
-Weight (lbs)×703
-​
- 
 Example: If a person weighs 154 lbs and is 68 inches tall:
 
-𝐵
-𝑀
-𝐼
-=
-154
-×
-703
-6
-8
-2
-≈
-23.39
-BMI= 
-68 
-2
- 
-154×703
-​
- ≈23.39
+𝐵𝑀𝐼= (154×703)/(68)^2 ≈ 23.39
+
+
+
+
+
+
+
+
