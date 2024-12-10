@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <div style="height: 100vh;" class="container   ">
+        <div class=" p-3 shadow">
+            <H1 class="text-center m-3 text-primary-emphasis fw-bold">BMI CALCULATOR</H1>
+            <div class="row  m-3 border rounded-2 p-3">
+                <!-- input  section -->
+                <div class="col-lg-6  mb-3">
+                    <form id="bmiForm">
+                        <div class="mb-3">
+                            <label for="age" class="form-label fs-5 text-primary-emphasis">Age</label>
+                            <input id="age" class="form-control " type="number" placeholder="Enter your age">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-5 text-primary-emphasis">Gender</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" name="male" id="male"
+                                        checked>
+                                    <label class="form-check-label" for="male" id="male">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" name="female" id="female"
+                                        checked>
+                                    <label class="Female" for="Female">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="height" class="form-label fs-5 text-primary-emphasis">Height (cm)</label>
+                            <input id="height" class="form-control" placeholder="Enter your height" type="number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label fs-5 text-primary-emphasis">Weight (kg)</label>
+                            <input id="weight" class="form-control " placeholder="Enter your weight" type="number">
+                        </div>
+                        <div class="d-flex justify-content-between pt-2">
+                            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate</button>
+                            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+                        </div>
+                    </form>
+                    <p class="mt-3" id="bmialert"></p>
+                </div>
+                <!-- result section -->
+                <div class="col-lg-6   border rounded-2">
+                    <h2 class="m-3 text-primary-emphasis">BMI Result</h2>
+                    <div class=" row  d-flex justify-content-center">
+                        <div style="height: 100px;" class="text-center w-50 bg-light shadow rounded-2 m-2">
+                            <h5 class="pt-1 mb-0 fw-bold"> Your BMI</h5>
+                            <span id="bmiResult" class="fs-1 fw-bold">0</span>
+                        </div>
+                    </div>
+                    <!-- progress bar -->
+                    <div class="container">
+                        <div class="progress-bar-container">
+                            <div id="progress-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div id="difclr" class="d-flex justify-content-evenly  mb-3">
+                        <div>
+                            <button id="bot1" class="clrcle"></button> <span>Under Weight</span>
+                        </div>
+                        <div>
+                            <button id="bot2" class="clrcle"></button> <span> Normal Weight</span>
+                        </div>
+                        <div class="text-center">
+                            <button id="bot3" class="clrcle"></button> <span>Over Weight</span>
+                        </div>
+                        <div class="text-center">
+                            <button id="bot4" class="clrcle"></button><span> Obesity</span>
+                        </div>
+                    </div>
+                    <div class="fs-4 fw-bold " id="bmiAction"></div>
+                </div>
+
+                <div class="mt-4 p-3 border rounded-2">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <div>
+                            <h5>Healthy BMI range</h5>
+                            <p id="bmiRange" class="fs-5 fw-bold text-primary-emphasis">18.5 - 24.9</p>
+                        </div>
+                        <div>
+                            <h5>Healthy weight for this height</h5>
+                            <p id="healthyWeight" class="fs-5 fw-bold text-primary-emphasis">0-0Kg</p>
+                        </div>
+                        <div>
+                            <h5>Action</h5>
+                            <p id="action" class="text-danger fw-bold fs-5 ">Lose 0 Kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div class="pe-2 ps-3">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="main.js">
+
+</script>
+
+</html>
